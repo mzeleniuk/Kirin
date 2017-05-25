@@ -43,6 +43,9 @@ group :development, :test do
 
   # Testing framework for Rails
   gem 'rspec-rails', '~> 3.6'
+
+  # Fixtures replacement
+  gem 'factory_girl_rails', '~> 4.8.0'
 end
 
 group :development do
