@@ -1,4 +1,4 @@
-var EventApplication = React.createClass({
+let EventApplication = React.createClass({
   getInitialState: function () {
     return {events: []};
   },
@@ -8,7 +8,7 @@ var EventApplication = React.createClass({
   },
 
   getDataFromApi: function () {
-    var self = this;
+    let self = this;
 
     $.ajax({
       url: '/api/events',
@@ -23,11 +23,21 @@ var EventApplication = React.createClass({
     });
   },
 
+  handleSearch: function (events) {
+    this.setState({events: events});
+  },
+
   render: function () {
     return (
       <div className="container-fluid">
         <div className="page-header">
           <h1>Kirin</h1>
+        </div>
+
+        <div className="row m-b-lg">
+          <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <SearchForm handleSearch={this.handleSearch}/>
+          </div>
         </div>
 
         <div className="row">

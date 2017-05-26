@@ -11,3 +11,35 @@
   text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
   cursor: default;
 }
+
+.m-b-xs {
+  margin-bottom: 5px;
+}
+
+.m-b-sm {
+  margin-bottom: 10px;
+}
+
+.m-b-md {
+  margin-bottom: 15px;
+}
+
+.m-b-lg {
+  margin-bottom: 20px;
+}
+
+.search-field .input-group-addon {
+  color: #ffffff;
+  background-color: #536dfe;
+  border-color: #536dfe;
+}
+
+.search-field .form-control {
+  border-color: #536dfe;
+}
+
+.search-field .form-control:focus {
+  border-color: #304ffe;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #3d5afe;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #3d5afe;
+}
