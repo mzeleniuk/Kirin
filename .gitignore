@@ -18,3 +18,6 @@
 
 # Ignore JetBrains IDE work directory
 .idea
+
+# Ignore the test coverage results
+coverage
