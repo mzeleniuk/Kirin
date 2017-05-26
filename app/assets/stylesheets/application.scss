@@ -14,3 +14,9 @@
 // Bootstrap
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "event";
+
+html, body {
+  background: #f5f5f5 image-url('background.png');
+}
