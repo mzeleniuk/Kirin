@@ -20,6 +20,66 @@ RSpec.describe Api::EventsController, type: :controller do
     end
   end
 
+  describe 'POST #create' do
+    context 'with valid event params' do
+      it 'responds successfully with JSON format' do
+        post :create, params: {
+          event: {
+            name: 'Test Event',
+            description: 'Some description.',
+            event_date: Date.current,
+            place: 'Test place'
+          }
+        }, format: :json
+
+        expect(response).to be_success
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'creates a new Event' do
+        post :create, params: {
+          event: {
+            name: 'Test Event',
+            description: 'Some description.',
+            event_date: Date.current,
+            place: 'Test place'
+          }
+        }, format: :json
+
+        expect(Event.count).to eq(1)
+        expect(Event.first.name).to eq('Test Event')
+      end
+    end
+
+    context 'with invalid event params' do
+      it 'responds successfully with HTTP 400 status' do
+        post :create, params: {
+          event: {
+            name: nil,
+            description: 'Some description.',
+            event_date: Date.current,
+            place: 'Test place'
+          }
+        }, format: :json
+
+        expect(response).to have_http_status(400)
+      end
+
+      it 'does not create a new Event' do
+        post :create, params: {
+          event: {
+            name: nil,
+            description: 'Some description.',
+            event_date: Date.current,
+            place: 'Test place'
+          }
+        }, format: :json
+
+        expect(Event.count).to eq(0)
+      end
+    end
+  end
+
   describe 'GET #search' do
     before { FactoryGirl.create_list(:event, 5) }
 
