@@ -27,11 +27,24 @@ let EventApplication = React.createClass({
     this.setState({events: events});
   },
 
+  handleAdd: function (event) {
+    let events = this.state.events;
+
+    events.push(event);
+    this.setState({events: events});
+  },
+
   render: function () {
     return (
       <div className="container-fluid">
         <div className="page-header">
           <h1>Kirin</h1>
+        </div>
+
+        <div className="row m-b-lg">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <NewForm handleAdd={this.handleAdd}/>
+          </div>
         </div>
 
         <div className="row m-b-lg">

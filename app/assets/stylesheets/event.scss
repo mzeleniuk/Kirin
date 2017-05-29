@@ -12,6 +12,22 @@
   cursor: default;
 }
 
+.m-r-xs {
+  margin-right: 5px;
+}
+
+.m-r-sm {
+  margin-right: 10px;
+}
+
+.m-r-md {
+  margin-right: 15px;
+}
+
+.m-r-lg {
+  margin-right: 20px;
+}
+
 .m-b-xs {
   margin-bottom: 5px;
 }
@@ -26,6 +42,34 @@
 
 .m-b-lg {
   margin-bottom: 20px;
+}
+
+.btn-action {
+  color: #ffffff;
+  background-color: #7e57c2;
+  border-color: #7e57c2;
+}
+
+.btn-action:hover, .btn-action:active, .btn-action:focus {
+  color: #ffffff;
+  background-color: #5e35b1;
+  border-color: #5e35b1;
+}
+
+.styled-field .input-group-addon {
+  color: #ffffff;
+  background-color: #7e57c2;
+  border-color: #7e57c2;
+}
+
+.styled-field .form-control {
+  border-color: #7e57c2;
+}
+
+.styled-field .form-control:focus {
+  border-color: #5e35b1;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #673ab7;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #673ab7;
 }
 
 .search-field .input-group-addon {
