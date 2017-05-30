@@ -56,6 +56,18 @@
   border-color: #5e35b1;
 }
 
+.btn-red {
+  color: #ffffff;
+  background-color: #ff7043;
+  border-color: #ff7043;
+}
+
+.btn-red:hover, .btn-red:active, .btn-red:focus {
+  color: #ffffff;
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+
 .styled-field .input-group-addon {
   color: #ffffff;
   background-color: #7e57c2;

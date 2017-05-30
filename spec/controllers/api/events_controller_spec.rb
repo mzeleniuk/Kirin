@@ -102,4 +102,13 @@ RSpec.describe Api::EventsController, type: :controller do
       expect(json[0]['name']).to eq('Ruby Conf')
     end
   end
+
+  describe 'DELETE #destroy' do
+    let!(:event) { create :event }
+
+    it 'deletes the Event record' do
+      expect { delete :destroy, params: { id: event.id } }.to change(Event, :count).by(-1)
+      expect(response).to have_http_status(204)
+    end
+  end
 end

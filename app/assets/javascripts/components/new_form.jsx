@@ -57,7 +57,7 @@ let NewForm = React.createClass({
   render: function () {
     return (
       <form className="form-inline" onSubmit={this.handleAdd}>
-        <div className="input-group styled-field m-r-sm">
+        <div className="input-group styled-field m-r-sm m-b-xs">
           <div className="input-group-addon">
             <span className="glyphicon glyphicon-tag" aria-hidden="true"/>
           </div>
@@ -71,7 +71,7 @@ let NewForm = React.createClass({
                  onChange={this.handleChange}/>
         </div>
 
-        <div className="input-group styled-field m-r-sm">
+        <div className="input-group styled-field m-r-sm m-b-xs">
           <div className="input-group-addon">
               <span className="glyphicon glyphicon-map-marker" aria-hidden="true"/>
           </div>
@@ -85,7 +85,7 @@ let NewForm = React.createClass({
                  onChange={this.handleChange}/>
         </div>
 
-        <div className="input-group styled-field m-r-sm">
+        <div className="input-group styled-field m-r-sm m-b-xs">
           <div className="input-group-addon">
             <span className="glyphicon glyphicon-time" aria-hidden="true"/>
           </div>
@@ -99,7 +99,7 @@ let NewForm = React.createClass({
                  onChange={this.handleChange}/>
         </div>
 
-        <div className="input-group styled-field m-r-sm">
+        <div className="input-group styled-field m-r-sm m-b-xs">
           <div className="input-group-addon">
             <span className="glyphicon glyphicon-info-sign" aria-hidden="true"/>
           </div>
@@ -113,7 +113,7 @@ let NewForm = React.createClass({
                  onChange={this.handleChange}/>
         </div>
 
-        <button type="submit" className="btn btn-action">
+        <button type="submit" className="btn btn-action m-b-xs">
           <span className="glyphicon glyphicon-plus m-r-xs" aria-hidden="true"/>
           Add Event
         </button>
