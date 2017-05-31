@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   namespace :api do
-    resources :events, only: %i[index create destroy] do
+    resources :events, only: %i[index create update destroy] do
       get :search, on: :collection
     end
   end

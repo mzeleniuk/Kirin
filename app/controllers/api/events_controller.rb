@@ -1,6 +1,6 @@
 module Api
   class EventsController < ApplicationController
-    before_action :set_event, only: [:destroy]
+    before_action :set_event, only: %i[update destroy]
 
     def index
       render json: Event.all
@@ -13,6 +13,14 @@ module Api
         render json: event
       else
         head :bad_request
+      end
+    end
+
+    def update
+      if @event.update(event_params)
+        render json: @event
+      else
+        head :unprocessable_entity
       end
     end
 

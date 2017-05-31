@@ -80,6 +80,56 @@ RSpec.describe Api::EventsController, type: :controller do
     end
   end
 
+  describe 'PATCH #update' do
+    let(:event) { create :event }
+
+    context 'with valid event params' do
+      it 'responds successfully with JSON format' do
+        patch :update, params: {
+          id: event.id,
+          event: { name: 'React course' }
+        }, format: :json
+
+        expect(response).to be_success
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'updates the Event' do
+        patch :update, params: {
+          id: event.id,
+          event: { name: 'React course' }
+        }, format: :json
+
+        json = JSON.parse(response.body)
+        expect(json['name']).to eq('React course')
+
+        event.reload
+        expect(event.name).to eq('React course')
+      end
+    end
+
+    context 'with invalid event params' do
+      it 'responds successfully with HTTP 422 status' do
+        patch :update, params: {
+          id: event.id,
+          event: { name: nil }
+        }, format: :json
+
+        expect(response).to have_http_status(422)
+      end
+
+      it 'does not update the Event record' do
+        patch :update, params: {
+          id: event.id,
+          event: { name: nil }
+        }, format: :json
+
+        event.reload
+        expect(event.name).to_not eq(nil)
+      end
+    end
+  end
+
   describe 'GET #search' do
     before { FactoryGirl.create_list(:event, 5) }
 
