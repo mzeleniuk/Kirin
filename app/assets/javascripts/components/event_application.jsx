@@ -42,6 +42,14 @@ let EventApplication = React.createClass({
     this.setState({events: events});
   },
 
+  handleUpdateRecord: function (old_event, event) {
+    let events = this.state.events.slice();
+    let index = events.indexOf(old_event);
+
+    events.splice(index, 1, event);
+    this.setState({events: events});
+  },
+
   render: function () {
     return (
       <div className="container-fluid">
@@ -63,7 +71,9 @@ let EventApplication = React.createClass({
 
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <EventTable events={this.state.events} handleDeleteRecord={this.handleDeleteRecord}/>
+            <EventTable events={this.state.events}
+                        handleDeleteRecord={this.handleDeleteRecord}
+                        handleUpdateRecord={this.handleUpdateRecord}/>
           </div>
         </div>
       </div>
