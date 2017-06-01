@@ -1,5 +1,7 @@
 # Kirin
 
+[![CircleCI](https://circleci.com/gh/mzelenyuk/Kirin/tree/master.svg?style=svg&circle-token=e7bb8f512e8d31a62db7bf6301e91e5eaf057a52)](https://circleci.com/gh/mzelenyuk/Kirin/tree/master)
+
 A simple application that uses React on the front-end and Rails on the back-end.
 
 It allows to manage the events, search for them and sort by specified field.
