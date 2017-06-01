@@ -1,24 +1,27 @@
-# README
+# Kirin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple application that uses React on the front-end and Rails on the back-end.
 
-Things you may want to cover:
+It allows to manage the events, search for them and sort by specified field.
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+Ruby 2.4.1
 
-* Configuration
+## System dependencies
 
-* Database creation
+Rails 5.0.3
 
-* Database initialization
+React 15.4.2
 
-* How to run the test suite
+## Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+Run `rails db:create` in Terminal.
 
-* Deployment instructions
+## Database initialization
 
-* ...
+Run `rails db:migrate` in Terminal.
+
+## How to run the test suite
+
+Run `bundle exec rspec` in Terminal.
