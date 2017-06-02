@@ -86,4 +86,27 @@ RSpec.describe Event, type: :model do
       end
     end
   end
+
+  describe '.per_page' do
+    it 'defines the number of records on a page' do
+      expect(Event.per_page).to eq(10)
+    end
+  end
+
+  describe '.pages' do
+    it 'returns the amount of pages based on the number of records' do
+      FactoryGirl.create_list(:event, 15)
+
+      expect(Event.pages).to eq(2)
+    end
+  end
+
+  describe '.paginate' do
+    it 'returns records based on the page number and the number of records per page' do
+      FactoryGirl.create_list(:event, 5)
+
+      expect(Event.paginate.first).to be_kind_of(Event)
+      expect(Event.paginate.count).to eq(5)
+    end
+  end
 end

@@ -16,7 +16,7 @@ RSpec.describe Api::EventsController, type: :controller do
 
       json = JSON.parse(response.body)
 
-      expect(json.length).to eq(5)
+      expect(json['events'].length).to eq(5)
     end
   end
 

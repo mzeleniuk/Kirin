@@ -25,8 +25,8 @@ let NewForm = React.createClass({
         method: 'POST',
         data: {event: self.state},
 
-        success: function (data) {
-          self.props.handleAdd(data);
+        success: function () {
+          self.props.handleAdd();
           self.setState(self.getInitialState());
         },
 
