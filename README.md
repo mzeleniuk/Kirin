@@ -27,3 +27,11 @@ Run `rails db:migrate` in Terminal.
 ## How to run the test suite
 
 Run `bundle exec rspec` in Terminal.
+
+## How to run a static analysis security vulnerability scanner
+
+Run `brakeman` in Terminal.
+
+## How to run a Ruby static code analyzer
+
+Run `rubocop` in Terminal.

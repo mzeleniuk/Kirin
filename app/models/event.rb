@@ -11,7 +11,7 @@ class Event < ApplicationRecord
 
     def pages(per_page = self.per_page)
       pages = count / per_page.to_f
-      pages += 1 if pages % 1 > 0
+      pages += 1 if (pages % 1).positive?
       pages.to_i
     end
 
